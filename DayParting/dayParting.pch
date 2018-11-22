@@ -1,0 +1,224 @@
+//
+//  dayParting.pch
+//  DayParting
+//
+//  Created by jiamanu on 2018/8/14.
+//  Copyright © 2018年 easygo. All rights reserved.
+//
+
+#ifndef dayParting_h
+#define dayParting_h
+
+//frame
+#import <PureLayout/PureLayout.h>
+#import <AFNetworking.h>
+#import <RETableViewManager/RETableViewManager.h>
+#import <MJRefresh/MJRefresh.h>
+#import <MJExtension/MJExtension.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <FXBlurView/FXBlurView.h>
+
+//class
+#import "UIButton+Action.h"
+#import "UIViewController+HUD.h"
+#import "NSString+Attribute.h"
+#import "UIButton+Swap.h"
+#import "NSDate+FormatterTime.h"
+
+
+
+#define DPWindowWidth    [UIScreen mainScreen].bounds.size.width
+#define DPWindowHeight   [UIScreen mainScreen].bounds.size.height
+
+
+//block弱引用
+#define DPWeakWithNameAndObject(_obj,_name) __weak typeof(_obj) weak##_name = _obj
+#define DPWeak(_obj) DPWeakWithNameAndObject(_obj,_obj)
+#define DPWeakSelf DPWeak(self)
+
+//色值
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define UIColorFromRGB1(rgbValue,alpha1) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alpha1]
+
+//color
+#define DPRedColor [UIColor redColor]
+#define DPBlackColor  UIColorFromRGB(0x000000)
+#define DPGrayColor UIColorFromRGB(0x666666)
+#define DPDarkGrayColor UIColorFromRGB(0x333333)
+#define DPLightGrayColor  UIColorFromRGB(0x999999)
+
+#define DPWhiteColor [UIColor whiteColor]
+#define DPWhiteColor1 UIColorFromRGB(0xfefefe)
+
+
+#define DPBlueColor UIColorFromRGB(0x1195fe)
+#define DPBlueColor1 UIColorFromRGB(0x566d98)
+#define DPBlueColor2 UIColorFromRGB(0xf6f8f9)
+#define DPBlueColor3 UIColorFromRGB(0xdce5ed)
+#define DPBlueColor4 UIColorFromRGB(0xf3faff)
+
+#define DPOrangeColor UIColorFromRGB(0xffa303)
+#define DPOrangeColor1 UIColorFromRGB(0xff5722)
+#define DPOrangeColor2 UIColorFromRGB(0xffab91)
+
+#define DPGreenColor UIColorFromRGB(0x23d0ca)
+#define DPGreenColor1 UIColorFromRGB(0x27d9a1)
+#define DPGreenColor2 UIColorFromRGB(0x22d1cd)
+#define DPGreenColor3 UIColorFromRGB(0x6fd13b)
+
+#define DPShadowColor UIColorFromRGB1(0x485b7e,0.1)
+
+
+#define DPBackGroundColor UIColorFromRGB(0xfafafa)
+
+
+#define DPLightGrayColor1  UIColorFromRGB(0xbec5cc)
+#define DPLightGrayColor2  UIColorFromRGB(0x7285a4)
+#define DPLightGrayColor3  UIColorFromRGB(0x535353)
+#define DPLightGrayColor4  UIColorFromRGB(0xd2d2d2)
+#define DPLightGrayColor5  UIColorFromRGB(0xdddddd)
+#define DPLightGrayColor6  UIColorFromRGB(0xc2c6da)
+#define DPLightGrayColor7  UIColorFromRGB(0x5a6c87)
+#define DPLightGrayColor8  UIColorFromRGB(0xdedede)
+#define DPLightGrayColor9  UIColorFromRGB(0xbababa)
+#define DPLightGrayColor10  UIColorFromRGB(0x7f8b96)
+#define DPLightGrayColor11  UIColorFromRGB(0x3f5578)
+#define DPLightGrayColor12  UIColorFromRGB(0x1a3156)
+#define DPLightGrayColor13  UIColorFromRGB(0x717883)
+#define DPLightGrayColor14  UIColorFromRGB(0xc9c9cb)
+#define DPLightGrayColor15  UIColorFromRGB(0x485261)
+#define DPLightGrayColor16  UIColorFromRGB(0xa8b3c5)
+#define DPLightGrayColor17  UIColorFromRGB(0xbbbbbb)
+#define DPLightGrayColor18  UIColorFromRGB(0x606e85)
+#define DPLightGrayColor19  UIColorFromRGB(0x8291aa)
+#define DPLightGrayColor20  UIColorFromRGB(0xe8e8e8)
+#define DPLightGrayColor21  UIColorFromRGB(0xbfbfbf)
+#define DPLightGrayColor22  UIColorFromRGB(0xade8ff)
+#define DPLightGrayColor23  UIColorFromRGB(0xe2e2e2)
+
+//分割线颜色
+#define DPLineColor1 UIColorFromRGB(0x535353)
+#define DPLineColor2  UIColorFromRGB(0xe5e5e5)
+#define DPLineColor3  UIColorFromRGB(0xececec)
+
+
+#define DPLineHeight 0.5  //分割线高度
+#define DPCommonButtonHeight 50  //提交按钮高度
+
+
+
+//font
+#define DPFont1 [UIFont systemFontOfSize:11]
+#define DPFont2 [UIFont systemFontOfSize:12]
+#define DPFont3 [UIFont systemFontOfSize:13]
+#define DPFont4 [UIFont systemFontOfSize:14]
+#define DPFont5 [UIFont systemFontOfSize:15]
+#define DPFont6 [UIFont systemFontOfSize:16]
+#define DPFont7 [UIFont systemFontOfSize:17]
+#define DPFont8 [UIFont systemFontOfSize:18]
+#define DPFont9 [UIFont systemFontOfSize:19]
+#define DPFont20 [UIFont systemFontOfSize:20]
+#define DPFont10 [UIFont systemFontOfSize:10]
+
+
+//space
+#define DPSmallSpacing  10
+#define DPMiddleSpacing  15
+#define DPBigSpacing  20
+
+
+//seperate
+#define DPSeperateInsert UIEdgeInsetsMake(0, DPWindowWidth, 0, 0)
+#define DPSeperateInsert1 UIEdgeInsetsMake(0, DPMiddleSpacing, 0, 0)
+#define DPSeperateInsert2 UIEdgeInsetsMake(0, DPMiddleSpacing, 0, DPMiddleSpacing)
+
+//微信支付类型
+#define DPPayType @""
+
+#define DPToken @"MDAwMDAwMDAwMH6Ynm4"
+//[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
+//@"MDAwMDAwMDAwMH6Ynm4"  //李
+//@"MDAwMDAwMDAwMH6onm4"。//米MDAwMDAwMDAwMH6onm4
+#define DPAuthenTag  [[NSUserDefaults standardUserDefaults] objectForKey:@"authenTag"]
+
+//判断有无刘海儿
+#define  IS_IPHONE_X (MAX(DPWindowWidth, DPWindowHeight) == 812.0f || MAX(DPWindowWidth, DPWindowHeight) == 896.0f) ? YES : NO
+#define DangerArea 34  //安全区域距离下方34pt
+
+//interface
+#define DPBaseUrl @"http://rent.mlong88.vip"
+
+//登录
+#define DPLoginOfGetCode @"/login/sendcode"  //获取验证码
+#define DPLogin @"/login/login"  //登录
+
+#define DPAnnotionList @"/homeapi/get_park_nums"  //所有车辆标注
+
+#define DPCarList @"/carapi/getcar_list"  //可用车辆列表
+#define DPCarDetails @"/carapi/carinfo"  //可用车辆详情
+#define DPCarOfNearestPoint  @"/carapi/get_neardot"    //现在用车
+#define DPCarDetailsOfReturnPoints  @"/carapi/returncar_addrs"  //还车点
+#define DPCarDetailsOfStatus @"/orderapi/reserve_order" //预定之前，查看是否交押金
+#define DPCarDetailsOfPayMessages  @"/orderapi/show_affirm_order"    //生成订单是的付费详情
+#define DPCarDetailsOfConfirmPayMessages  @"/orderapi/addorder"    //提交订单
+#define DPCarOfAvailableMessage  @"/orderapi/order_success"    //预定成功订单详情
+
+#define DPCarDetailsOfFaceRecognition  @"/upload_api/do_upload_face"    //订单详情内的面部识别
+#define DPCarDetailsOfUnlock  @"/orderapi/mark_order"    //订单详情内的开锁
+#define DPCarDetailsOfReturn @"/orderapi/return_car"  ////订单详情内的还车
+#define DPCarDetailsOfChangeReturnAddress @"/orderapi/save_retruncar_addrs"  ////订单详情内的更改还车点
+
+#define DPCarDetailsOfPay @"/orderapi/do_pay"  ////订单详情内的去支付（包含微信支付）
+#define DPCarDetailsOfYuePay @"/orderapi/balance_pay"  ////订单详情内的去支付（单纯余额支付）
+
+#define DPCarDetailsOfQuestion @"/orderapi/fault"  ////订单详情内的车况上报（报完之后，该车辆不能使用了）
+#define DPCarDetailsOfVerifyPaymentPassword @"/leaguer_api/checkpwd" //支付时，若选择余额支付，需要先验证支付密码是否正确
+
+
+
+#define DPMyOrderList @"/leaguer_api/my_order"  //我的订单
+#define DPMyOrderDetail @"/orderapi/order_show"  //我的订单列表内的订单详情
+
+#define DPMyOrderDetailOfQuestion @"/leaguer_api/add_orderdoubt"  //我的订单详情之订单疑问
+
+#define DPMyOrderInvoiceList @"/bill/rent_bill"  //我的发票列表
+#define DPMyOrderInvoiceHistoryList @"/bill/history_bill"   //历史发票列表
+#define DPMyOrderInvoiceHistoryListOfDetail @"/bill/history_bill_info"   //历史发票详情
+#define DPMyOrderInvoiceGenerate @"/bill/add_rentbill"  //添加发票
+#define DPMyRechargeInvoiceList @"/bill/recharge_bill"  //充值记录开票
+
+#define DPMyCardOfBind @"/Leaguer_api/do_bind"  //绑定信用卡
+#define DPMyCardOfBindMessage @"/Leaguer_api/bind_bank"  //到绑定信用卡，先获取用户信息
+
+#define DPMyWallet @"/Leaguer_api/my_purse"  //我的钱包,我的银行卡信息
+#define DPMyWalletOfCardUnbind @"/leaguer_api/del_bind"  //解绑银行卡
+#define DPMyWalletOfRecharge @"/leaguer_api/user_recharge"  //充值
+
+#define DPMyAuthentyOfUploadImage @"/upload_api/upload"  //认证。上传图片
+#define DPMyAuthentyOfConfirmIDCard @"/upload_api/idcard"  //认证。确认身份证信息
+#define DPMyAuthentyOfConfirmDriverCard @"/upload_api/driverinfo"  //认证。确认驾驶证信息
+
+
+#define DPMyUserCenterMessages @"/leaguer_api/member_core" //用户中心
+#define DPMyUserCenterOfScoreExchange @"/leaguer_api/exchange_socre" //积分兑换
+#define DPMyUserCenterOfScoreList @"/leaguer_api/socre_list"   //我的积分明细
+
+#define DPMyAvailableTicket @"/orderapi/get_ticket" //可用优惠券列表(付款时选择的优惠券列表)
+#define DPMyTicketList @"/leaguer_api/yhq_list" //我的优惠券列表
+
+#define DPMyCapitalList @"/leaguer_api/moneylist" //我的收支明细
+
+//设置
+#define DPSettingOfSendPhoneCode @"/leaguer_api/post_smscode"  //重置密码 -- 发送手机验证码
+#define DPSettingOfCheckPhoneCode @"/leaguer_api/check_code"  //重置密码 -- 验证手机验证码
+#define DPSettingOfSetPhoneCode @"/leaguer_api/setup_pwd"  //重置密码 -- 设置密码
+
+//违章
+#define DPMyBreakList @"/leaguer_api/peccancy" //我的违章列表
+#define DPMyBreakDetail @"/peccapi/peccinfo" //线上缴费详情
+
+
+
+#endif /* dayParting_h */
