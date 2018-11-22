@@ -4151,6 +4151,7 @@
 				11E95FEE2122A6A80034AEB4 /* Sources */,
 				11E95FEF2122A6A80034AEB4 /* Frameworks */,
 				11E95FF02122A6A80034AEB4 /* Resources */,
+				268F391722CCEAF26D77E839 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4640,6 +4641,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		268F391722CCEAF26D77E839 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DayParting/Pods-DayParting-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/RETableViewManager/RETableViewManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RETableViewManager.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DayParting/Pods-DayParting-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B40D3BBECADAE4560361B1AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
