@@ -24,6 +24,14 @@ pod 'MJExtension', '~> 3.0.15.1'
 
 pod 'SDWebImage', '~> 4.4.2'
 
+pod 'WechatOpenSDK', '~> 1.8.2'
+
+pod 'JKCountDownButton', '~> 1.2.0'
+
+pod 'FXBlurView', '~> 1.6.4'
+
+pod 'LBPhotoBrowser', '~> 2.2.2'
+
 
 
 end
