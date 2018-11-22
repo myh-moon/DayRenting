@@ -34,4 +34,8 @@ pod 'LBPhotoBrowser', '~> 2.2.2'
 
 
 
+pod 'AMap3DMap', '~> 6.3.0' #地图
+
+
+
 end
